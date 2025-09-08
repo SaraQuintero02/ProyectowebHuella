@@ -1,0 +1,133 @@
+/*Estilo general*/
+.footer {
+  width: 100%;
+  color: #000000;
+  margin-top: 40px;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D9EEFF;
+  padding: 30px 50px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/*Logo y redes*/
+.footer-logo {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+/*Imagen*/
+.footer-logo img {
+  max-width: 200px;
+  margin-bottom: 50px;
+}
+
+.footer-logo h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+/*Iconos*/
+.redes a {
+  margin: 0 8px;
+  font-size: 20px; /*Tamaño del icono*/
+  color: #000000;
+  transition: color 0.3s; /*Animación*/
+}
+
+.redes a:hover {
+  color: #0077cc;
+}
+
+/*Menu*/
+.footer-menu {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-menu h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-menu ul {
+  list-style: none; /*Quita viñetas*/
+  padding: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 6px;
+}
+
+.footer-menu a {
+  color: #000000;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.footer-menu a:hover {
+  color: #0077cc;
+}
+
+/*Contacto*/
+.footer-contacto {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-contacto h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-contacto p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.footer-contacto i {
+  margin-right: 8px;
+  color: #000000;
+}
+
+/*Derecho de autor*/
+.footer-inferior {
+  text-align: center;
+  padding: 12px;
+  background-color: #ffffff;
+  font-size: 13px;
+  color: #000000;
+  border-top: 1px solid #ffffff;
+}
+
+/*Para enlace de Bogota*/
+.footer-contacto a {
+  color: #000000;
+  transition: color 0.3s;
+}
+
+.footer-contacto a:hover {
+  color: #0077cc;
+}
+ /* Responsive */
+    @media (max-width: 750px) {
+      .registro {
+        flex-direction: column;
+        text-align: center;
+    }
+  }
