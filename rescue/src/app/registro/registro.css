@@ -8,8 +8,9 @@
 }
 
 .registro h2 {
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
+  font-weight: bold;
 }
 
 /*caja del formulario*/
@@ -59,7 +60,7 @@ form input {
   padding: 0.5rem;
   outline: none;
   background: transparent;
-  font-size: 1.1rem;
+  font-size: 0.95.rem;
 }
 
 form input:focus {
@@ -74,7 +75,7 @@ form input:focus {
   border: none;
   border-radius: 20px;
   background-color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -100,7 +101,7 @@ form input:focus {
 /*Mensaje de errores*/
 .mensaje-estado {
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #700015;
   text-align: center;
   min-height: 1.2rem;
