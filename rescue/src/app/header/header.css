@@ -1,6 +1,13 @@
 header {
   background: #ffffff;
-  padding: 0.9rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  padding: 1.5rem 3rem;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /*No rompera el ancho*/
 }
 
 /*Navegación menu*/
@@ -73,6 +80,7 @@ nav > ul > li > a:hover {
 /*Efecto al pasar mouse del submenu*/
 .submenu .submenu-items li a:hover {
   background: #D9EEFF;
+  border: black;
   cursor: pointer;
   color: #000000;
   text-decoration: none;

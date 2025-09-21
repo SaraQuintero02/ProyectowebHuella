@@ -7,7 +7,7 @@
 
       <!--Item Nosotros-->
       <li class="submenu" [class.open]="openMenu === 'nosotros'"> <!--Item con el submenu-->
-        <a href="#" (click)="menu($event, 'nosotros')">Nosotros <i class="fa-solid fa-caret-down"></i></a>
+        <a (click)="menu($event, 'nosotros')">Nosotros <i class="fa-solid fa-caret-down"></i></a>
         <ul class="submenu-items"> <!--Lo que contiene el submenu-->
           <li><a routerLink="/mision-vision">Misión y Visión</a></li>
           <li><a routerLink="/voluntariados">Voluntariados</a></li>
@@ -17,10 +17,9 @@
 
       <!--Item Adopciones-->
       <li class="submenu" [class.open]="openMenu === 'adopciones'">
-        <a href="#" (click)="menu($event, 'adopciones')">Adopciones <i class="fa-solid fa-caret-down"></i></a>
+        <a (click)="menu($event, 'adopciones')">Adopciones <i class="fa-solid fa-caret-down"></i></a>
         <ul class="submenu-items">
           <li><a routerLink="/proceso-adopcion">Proceso de adopción</a></li>
-          <li><a routerLink="/apadrinamiento">Apadrinamiento</a></li>
           <li><a routerLink="/adoptables">Adoptables</a></li>
         </ul>
       </li>

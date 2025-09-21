@@ -1,0 +1,291 @@
+.hero {
+  background: #D9EEFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;   
+  gap: 300px; 
+  padding: 0% 10%;
+  position: relative;
+  overflow: hidden; /*Oculta contenido que sobresalga del contenedor*/
+  height: 400px; 
+  padding-top: 100px;
+}
+
+/*Texto*/
+.hero .texto {
+  width: 45%;
+  text-align: left;
+  margin-top: -140px;
+}
+
+.hero .texto h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #000000;
+  white-space: nowrap; 
+}
+
+.hero .texto p {
+  font-size: 1.1rem;
+  color: #000000;
+  margin: 0;
+}
+
+/*Imagen perro y gato*/
+.hero .imagen {
+  width: 80%;
+  transform: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .imagen img {
+  max-width: 95%;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(-80px);
+}
+
+/*Efecto curva*/
+.wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.wave path {
+  fill: #ffffff;
+  stroke: none;
+}
+
+/*Reportes*/
+.reportes {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.reportes h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.reportes .subtexto {
+  font-size: 1.1rem;
+  color: #000;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.reportes-contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  flex-wrap: wrap;
+}
+
+/*Imagen y botón*/
+.reporte-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.reporte-card button {
+  position: relative;
+  z-index: 10;
+}
+
+/*Caja de la imagen*/
+.img-box {
+  margin-top: 50px;
+  background: #FFFAE7;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 150px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*Ajuste individual de cada imagen*/
+.reporte-card.abandonado .img-box img {
+  width: 280px;
+  top: -5px;
+  position: relative;
+}
+
+.reporte-card.maltratado .img-box img {
+  width: 400px;
+  top: -10px;
+  position: relative;
+}
+
+.reporte-card.encerrado .img-box img {
+  width: 230px;
+  top: -18px;
+  position: relative;
+}
+
+/*Botones generales*/
+section.reportes .reportes-contenedor .reporte-card button {
+  margin-top: 80px;
+  background: #FFFAE7 !important;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.0rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.reportes .reportes-contenedor .reporte-card button:hover {
+  background: #c3ba99 !important;
+  transform: translateY(-3px);
+}
+
+/*Sección Estadística*/
+.estadistica {
+  display: flex;
+  justify-content: space-around; /*distribuye los 3 bloques*/
+  align-items: center;
+  text-align: center;
+  padding: 150px 20px;
+  background-color: #D9EEFF;
+  margin-top: 50px; 
+}
+
+.estadistica .dato {
+  flex: 1;
+}
+
+.estadistica i {
+  font-size: 50px; /*tamaño del ícono*/
+  color: #000; 
+  margin-bottom: 10px;
+}
+
+.estadistica h3 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.estadistica p {
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+/*Sección informativa*/
+.informativa {
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.informativa h2 {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: center; 
+}
+
+.informativa h2 i {
+  font-size: 2rem;
+  color: #000; 
+}
+
+.informativa p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #000000;
+  text-align: center; 
+  margin-top: 30px;
+}
+
+/*Galeria de 4 columnas*/
+.informativa .galeria {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.informativa .galeria img {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+}
+
+.aliados h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.aliados .logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 80px;
+}
+
+.aliados .logos a {
+  flex: 1 1 120px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aliados .logos img {
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.aliados .logos img:hover {
+  transform: scale(1.1);
+}
+
+/*Separación extra con el footer*/
+.aliados {
+  margin-bottom: 20rem;
+}

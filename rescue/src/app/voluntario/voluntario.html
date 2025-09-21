@@ -1,1 +1,57 @@
-<p>voluntario works!</p>
+<!--Seccion principal/Superior-->
+    <section class="voluntariado">
+      <div class="voluntariado-content">
+        <div class="texto">
+          <h2>VOLUNTARIADO</h2>
+          <p>
+            Ser voluntario es regalar tiempo, amor y esperanza. Únete a nuestro
+            proyecto y ayúdanos a rescatar, cuidar y dar segundas oportunidades
+            a los animales en situación de abandono. Con tu apoyo, cada huellita
+            podrá encontrar un camino hacia un hogar lleno de cariño.
+          </p>
+        </div>
+        <div class="imagen">
+          <img src="../assets/img/voluntario.png" alt="Gato voluntario" />
+        </div>
+      </div>
+
+      <!--Curva-->
+      <div class="wave-bottom">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path d="M-2.82,96.33 C152.95,185.21 349.20,8.52 500.00,112.27 L500.00,150.00 L0.00,150.00 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!--Seccion tirulo e imagen de voluntarios-->
+    <section class="formulario-voluntario">
+      <div class="voluntario-form">
+        <h2>Sé parte del cambio, haz voluntariado</h2>
+        <img src="../assets/img/voluntariado.png" alt="Voluntarios" />
+      </div>
+    </section>
+
+    <!--Seccion formulario-->
+    <section class="formulario">
+      <h2 class="formulario-titulo">Déjanos tus datos, pronto te contactaremos</h2>
+
+      <form id="form-voluntario">
+        <div class="form-row">
+          <input type="text" id="nombre" placeholder="Tu nombre" required />
+          <input type="email" id="correo" placeholder="Tu correo" required />
+        </div>
+
+        <textarea id="mensaje" placeholder="Cuéntanos por qué quieres ser voluntario" required></textarea>
+
+        <button type="submit">Enviar por WhatsApp</button>
+      </form>
+
+      <p id="mensaje-confirmacion" style="display: none; color: rgb(0, 0, 0); margin-top: 10px">Tu mensaje ha sido redirigido en WhatsApp</p>
+    </section>
+
+     <!--Botones de accesibilidad-->
+    <div class="botones-accesibilidad">
+      <button id="aumentarFuente" aria-label="Aumentar de fuente">A+</button>
+      <button id="disminuirFuente" aria-label="Disminuir de fuente">A-</button>
+      <button id="contraste" aria-label="Contraste"><i class="fa-solid fa-adjust"></i></button>
+    </div>

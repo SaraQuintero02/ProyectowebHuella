@@ -1,0 +1,39 @@
+<section class="form-reporte">
+      <h2>REPORTE ANIMAL</h2>
+      <form>
+        <label for="tipo">Tipo de reporte:</label>
+        <select id="tipo" name="tipo">
+          <option value="abandonado">Abandonado</option>
+          <option value="maltratado">Maltratado</option>
+          <option value="encerrado">Encerrado</option>
+        </select>
+
+        <label for="ubicacion">Ubicación:</label>
+        <input
+          type="text"
+          id="ubicacion"
+          name="ubicacion"
+          placeholder="Dirección o lugar donde se encuentra el animal"
+          required
+        />
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" readonly />
+
+        <label for="descripcion">Descripción:</label>
+        <textarea
+          id="descripcion"
+          name="descripcion"
+          placeholder="Descripción del estado del animal"
+        ></textarea>
+
+        <button type="submit">Enviar reporte</button>
+      </form>
+    </section>
+
+     <!--Botones de accesibilidad-->
+    <div class="botones-accesibilidad">
+      <button id="aumentarFuente" aria-label="Aumentar de fuente">A+</button>
+      <button id="disminuirFuente" aria-label="Disminuir de fuente">A-</button>
+      <button id="contraste" aria-label="Contraste"><i class="fa-solid fa-adjust"></i></button>
+    </div>

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './mision-vision.html',
   styleUrl: './mision-vision.css'
 })
-export class MisionVision {
+export class MisionVisionComponent {
 
 }
