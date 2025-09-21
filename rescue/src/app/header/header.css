@@ -2,62 +2,61 @@ header {
   background: #ffffff;
   position: fixed;
   top: 0;
-  left: 0; 
+  left: 0;
   width: 100%;
   padding: 1.5rem 3rem;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /*No rompera el ancho*/
+  box-sizing: border-box;
 }
 
-/*Navegación menu*/
 nav {
-  display: flex; /*Organización en fila*/
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
-/*Titulo*/
 nav h1 {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 8px;
+  color: #000;
+  margin: 0;
 }
 
-/*Lista del menu*/
 nav ul {
-  list-style: none; /*Sin viñetas*/
+  list-style: none;
   display: flex;
   gap: 2rem;
   margin: 0;
   padding: 0;
 }
 
-/*Pocisión del submenu*/
 nav ul li {
   position: relative;
 }
 
-/*Estilo del menu en general*/
 nav ul li a {
   text-decoration: none;
-  font-size: 1rem;
-  color: rgb(0, 0, 0);
+  font-size: 0.95rem;
+  color: #000000;
   padding: 6px 10px;
   display: block;
-  transition: background 0.3s;
+  transition: color 0.3s, background 0.3s;
 }
 
-/*Efecto al pasar mouse*/
 nav > ul > li > a:hover {
-  color: inherit; /*No cambia el color que ya tiene*/
   text-decoration: underline;
-  text-decoration-color: #000000;
+  text-decoration-color: #000;
 }
 
-/*Submenu*/
 .submenu .submenu-items {
   display: none;
   position: absolute;
@@ -69,24 +68,28 @@ nav > ul > li > a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: 1000; /*Aparece encim de otros elementos*/
+  z-index: 1000;
 }
 
-/*open: muestra submenu*/
 .submenu.open .submenu-items {
   display: block;
 }
 
-/*Efecto al pasar mouse del submenu*/
+.submenu .submenu-items li a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #000000;
+  padding: 8px 12px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
 .submenu .submenu-items li a:hover {
   background: #D9EEFF;
-  border: black;
   cursor: pointer;
-  color: #000000;
   text-decoration: none;
 }
 
-/*Donar*/
 .btn-donar {
   font-weight: bold;
   display: flex;
@@ -96,23 +99,23 @@ nav > ul > li > a:hover {
   position: relative;
 }
 
-/*Icono corazón*/
 .btn-donar i {
   color: #D9EEFF;
-  font-size: 1.5em;
+  font-size: 0.95rem;
   position: absolute;
   left: 0;
   top: 50%;
   transform: translate(13%, -60%);
-  z-index: 0; /*Corazón detras de la letra*/
+  z-index: 0;
 }
 
 .btn-donar span {
   position: relative;
-  z-index: 1; /*Letra encima de corazón*/
+  z-index: 1;
 }
 
-/*Icono user*/
 li a i.fa-user {
   cursor: pointer;
+  font-size: 1.5rem;
 }
+

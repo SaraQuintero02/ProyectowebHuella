@@ -5,9 +5,10 @@ import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
 })
 export class App {
   protected readonly title = signal('rescue');
