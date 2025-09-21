@@ -23,14 +23,18 @@ export class Login {
     { email: 'valeryospina@gmail.com', password: 'os1234' }
   ];
 
-  //Para cambiar de pagina
+  //Para cambiar de página
   constructor(private router: Router) {}
 
-  //Limpiar input
-  onSubmit() {
+  //Redirige a la página de registro
+  irARegistro(): void {
+    this.router.navigate(['/registro']);
+  }
+
+  //Validación y redirección después del login
+  onSubmit(): void {
     this.mensaje = '';
 
-    //Validación
     if (!this.email.includes('@')) {
       this.mensaje = 'El correo electrónico no es válido';
       return;
@@ -48,7 +52,7 @@ export class Login {
       return;
     }
 
-    //Si pasa todas las validaciones redirige a perfiles
+    //Si pasa todas las validaciones, redirige a perfiles
     this.router.navigate(['/perfiles']);
   }
 }

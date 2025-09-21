@@ -25,9 +25,13 @@ export class RegistroComponent {
     { email: 'valeryospina@gmail.com' }
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  onSubmit() {
+  irALogin(): void {
+    this.router.navigate(['/login']);
+  }
+
+  onSubmit(): void {
     this.mensaje = '';
 
     // Validaciones básicas
@@ -53,7 +57,7 @@ export class RegistroComponent {
 
     // Redirige a otra página (por ejemplo, login)
     setTimeout(() => {
-      this.router.navigate(['login']);
+      this.router.navigate(['/login']);
     }, 2000);
   }
 }
