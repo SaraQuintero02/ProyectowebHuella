@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-perfiles',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './perfiles.html',
   styleUrl: './perfiles.css'
 })

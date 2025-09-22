@@ -1,5 +1,5 @@
 .hero {
-  background: #D9D7F1;
+  background: #D9EEFF;
   display: flex;
   align-items: center;
   justify-content: center;   
@@ -7,14 +7,15 @@
   padding: 0% 10%;
   position: relative;
   overflow: hidden; /*Oculta contenido que sobresalga del contenedor*/
-  height: 360px; 
+  height: 400px; 
+  padding-top: 100px;
 }
 
 /*Texto*/
 .hero .texto {
   width: 45%;
   text-align: left;
-  margin-top: -190px;
+  margin-top: -140px;
 }
 
 .hero .texto h2 {
@@ -34,7 +35,7 @@
 /*Imagen perro y gato*/
 .hero .imagen {
   width: 80%;
-  transform: scale(1.3);
+  transform: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +45,7 @@
   max-width: 95%;
   height: auto;
   object-fit: contain;
-  transform: translateY(-80px);
+  transform: translateY(-70px);
 }
 
 /*Efecto curva*/
@@ -213,4 +214,42 @@
 @media (max-width: 600px) {
   .info-btn { width: 32px; height: 32px; top: 6px; right: 6px; }
   .modal-contenido { padding: 18px; }
+}
+
+/* Contenedor para centrar el botón */
+.ver-mas-wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Botón "Ver más" */
+.ver-mas {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Línea animada debajo */
+.ver-mas::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #333;
+  margin: 4px auto 0;
+  transition: width 0.3s ease;
+}
+
+/* Hover: cambia color y subraya */
+.ver-mas:hover {
+  color: #555;
+}
+
+.ver-mas:hover::after {
+  width: 100%;
 }

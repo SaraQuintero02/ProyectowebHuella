@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio';
-import { AdoptablesComponent } from './adoptables/adoptables';
+import { Adoptables } from './adoptables/adoptables';
 import { ChatBotComponent } from './chat-bot/chat-bot';
 import { DonarComponent } from './donar/donar';
 import { MigapanComponent } from './migapan/migapan';
@@ -17,7 +17,7 @@ import { Login } from './login/login';
 
 export const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
-  { path: 'adoptables', component: AdoptablesComponent },
+  { path: 'adoptables', component: Adoptables },
   { path: 'chatbot', component: ChatBotComponent },
   { path: 'donar', component: DonarComponent },
   { path: 'login', component: Login },

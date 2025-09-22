@@ -1,10 +1,12 @@
 import { Component, HostListener } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports:[CommonModule,RouterModule],
   templateUrl: './header.html',
-  styleUrls: ['./header.css'],
+  styleUrls: ['./header.css']
 })
 export class Header {
   openMenu: string | null = null; //Guarda submenu ue esta abierto
