@@ -1,1 +1,20 @@
-<p>migapan works!</p>
+<nav aria-label="Miga de pan" class="breadcrumb">
+  <ol>
+    <li 
+      *ngFor="let item of migapanItems; let last = last"
+      [attr.aria-current]="last ? 'page' : null"
+    >
+      <a 
+        *ngIf="item.url && !last; else plainText"
+        (click)="navigateTo(item.url)"
+        [href]="item.url"
+        class="breadcrumb-link"
+      >
+        {{ item.nombre }}
+      </a>
+      <ng-template #plainText>
+        {{ item.nombre }}
+      </ng-template>
+    </li>
+  </ol>
+</nav>
