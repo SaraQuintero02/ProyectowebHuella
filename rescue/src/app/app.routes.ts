@@ -5,7 +5,7 @@ import { ChatBotComponent } from './chat-bot/chat-bot';
 import { DonarComponent } from './donar/donar';
 import { MigapanComponent } from './migapan/migapan';
 import { MisionVisionComponent } from './mision-vision/mision-vision';
-import { NoticiasComponent } from './noticias/noticias';
+import { Estadisticas } from './estadisticas/estadisticas';
 import { PerfilesComponent } from './perfiles/perfiles';
 import { PoliticaPrivacidad } from './politica-privacidad/politica-privacidad';
 import { ProcesoAdopcionComponent } from './proceso-adopcion/proceso-adopcion';
@@ -23,7 +23,7 @@ export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'migapan', component: MigapanComponent },
   { path: 'mision-vision', component: MisionVisionComponent },
-  { path: 'noticias', component: NoticiasComponent },
+  { path: 'estadisticas', component: Estadisticas },
   { path: 'perfiles', component: PerfilesComponent },
   { path: 'proceso-adopcion', component: ProcesoAdopcionComponent },
   { path: 'registro', component: RegistroComponent },

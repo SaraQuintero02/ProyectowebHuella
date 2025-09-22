@@ -1,58 +1,103 @@
 <main class="page">
       <section class="perfil">
         <div class="perfil-contenedor">
-          <img class="perfil-foto" src="../assets/img/imagen_predeterminada.png" alt="foto predeterminada"/>
+          <img class="perfil-foto" src="assets/images/imagen_predeterminada.png" alt="foto predeterminada"/>
           <h2>MI PERFIL</h2>
 
-          <!--Información del perfil-->
-          <div class="perfil-info">
-            <p><strong>Nombre:</strong> <span id="nombre">Luisa Quintero</span></p>
-            <p><strong>Correo:</strong> <span id="correo">Luisaquin@gmail.com</span></p>
-            <p><strong>Teléfono:</strong> <span id="telefono">3043018954</span></p>
-            <p><strong>Fecha de Registro:</strong><span id="fecha_registro">2025-09-13</span></p>
-            <p><strong>Tipo de Usuario:</strong><span id="tipo_usuario">Voluntario</span></p>
-          </div>
-          <div class="perfil-acciones" aria-label="Editar perfil"><button id="editarPerfil">Editar Perfil</button></div>
+          <!-- Información del perfil usando interpolación -->
+      <div class="perfil-info">
+        <p><strong>Nombre: </strong> <span>{{ currentUser.nombre }}</span></p>
+        <p><strong>Correo: </strong> <span>{{ currentUser.correo }}</span></p>
+        <p><strong>Teléfono: </strong> <span>{{ currentUser.telefono }}</span></p>
+        <p><strong>Fecha de Registro: </strong> <span>{{ currentUser.fecha_registro }}</span></p>
+        <p><strong>Tipo de Usuario: </strong> <span>{{ currentUser.tipo_usuario }}</span></p>
+      </div>
+
+        <!-- Botón para editar perfil -->
+      <div class="perfil-acciones" aria-label="Editar perfil">
+        <button (click)="editarPerfil()">Editar Perfil</button>
+      </div>
+    </div>
+
+    <!-- Modal para editar perfil - Se muestra condicionalmente -->
+    <aside 
+      class="editor-perfil" 
+      [class.show]="isEditing"
+      [attr.aria-hidden]="!isEditing"
+    >
+    <div class="modal-content">
+      <span class="cerrar" title="Cerrar" (click)="cerrarEditor()">&times;</span>
+      <h3>EDITAR PERFIL</h3>
+      
+      <!-- Formulario reactivo de Angular -->
+      <form [formGroup]="editForm" (ngSubmit)="guardarCambios()">
+        
+        <!-- Input para nombre -->
+        <label for="nombreInput">Nombre:</label>
+        <input
+          type="text"
+          id="nombreInput"
+          formControlName="nombre"
+          placeholder="Edita tu nombre aquí"
+          [class.error]="f['nombre'].invalid && f['nombre'].touched"
+        />
+        <!-- Mensaje de error para nombre -->
+        <div class="error-message" *ngIf="f['nombre'].invalid && f['nombre'].touched">
+          <span *ngIf="f['nombre'].errors?.['required']">El nombre es requerido</span>
+          <span *ngIf="f['nombre'].errors?.['minlength']">El nombre debe tener al menos 2 caracteres</span>
         </div>
 
-        <!--Editar perfil-->
-        <aside id="editorPerfil" class="editor-perfil" aria-hidden="true">
-          <span class="cerrar" title="Cerrar">&times;</span> <!--Botón para cerrar la edición-->
-          <h3>EDITAR PERFIL</h3>
-          <form id="formEditar">
-            <label for="nombreInput">Nombre:</label>
-            <input
-              type="text"
-              id="nombreInput"
-              name="nombre"
-              placeholder="Edita tu nombre aquí"
-            />
+        <!-- Input para correo -->
+        <label for="correoInput">Correo:</label>
+        <input
+          type="email"
+          id="correoInput"
+          formControlName="correo"
+          placeholder="Edita tu correo aquí"
+          [class.error]="f['correo'].invalid && f['correo'].touched"
+        />
+        <!-- Mensaje de error para correo -->
+        <div class="error-message" *ngIf="f['correo'].invalid && f['correo'].touched">
+          <span *ngIf="f['correo'].errors?.['required']">El correo es requerido</span>
+          <span *ngIf="f['correo'].errors?.['email']">Ingresa un correo válido</span>
+        </div>
 
-            <label for="correoInput">Correo:</label>
-            <input
-              type="email"
-              id="correoInput"
-              name="correo"
-              placeholder="Edita tu correo aquí"
-            />
+        <!-- Input para teléfono -->
+        <label for="telefonoInput">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefonoInput"
+          formControlName="telefono"
+          placeholder="Edita tu número aquí"
+          [class.error]="f['telefono'].invalid && f['telefono'].touched"
+        />
+        <!-- Mensaje de error para teléfono -->
+        <div class="error-message" *ngIf="f['telefono'].invalid && f['telefono'].touched">
+          <span *ngIf="f['telefono'].errors?.['required']">El teléfono es requerido</span>
+          <span *ngIf="f['telefono'].errors?.['pattern']">El teléfono debe tener 10 dígitos</span>
+        </div>
 
-            <label for="telefonoInput">Teléfono:</label>
-            <input
-              type="tel"
-              id="telefonoInput"
-              name="telefono"
-              placeholder="Edita tu número aquí"
-            />
+        <!-- Select para tipo de usuario -->
+        <label for="tipoInput">Tipo de Usuario:</label>
+        <select id="tipoInput" formControlName="tipo_usuario">
+          <option 
+            *ngFor="let tipo of tiposUsuario" 
+            [value]="tipo.value"
+          >
+            {{ tipo.label }}
+          </option>
+        </select>
 
-            <label for="tipoInput">Tipo de Usuario:</label>
-            <select id="tipoInput" name="tipo">
-              <option value="voluntario">Voluntario</option>
-              <option value="donante">Donante</option>
-              <option value="adoptante">Adoptante</option>
-            </select>
-
-            <button type="submit">Guardar cambios</button>
-          </form>
-        </aside>
-      </section>
-    </main>
+        <!-- Botón de guardar (solo habilitado si el formulario es válido) -->
+        <button 
+          type="submit" 
+          [disabled]="editForm.invalid"
+          class="btn-guardar"
+        >
+          Guardar cambios
+        </button>
+      </form>
+      </div>
+    </aside>
+  </section>
+</main>

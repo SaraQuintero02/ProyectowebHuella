@@ -41,7 +41,7 @@
 <div class="modal" *ngIf="seleccionado" (click)="cerrarModal()" aria-hidden="{{ !seleccionado }}">
   <div class="modal-contenido" (click)="$event.stopPropagation()">
     <button id="cerrar" aria-label="Cerrar modal" (click)="cerrarModal()">✖</button>
-    <h2>{{ seleccionado?.nombre }}</h2>
-    <p>{{ seleccionado?.historia }}</p>
+    <h2>{{ seleccionado.nombre }}</h2>
+    <p>{{ seleccionado.historia }}</p>
   </div>
 </div>

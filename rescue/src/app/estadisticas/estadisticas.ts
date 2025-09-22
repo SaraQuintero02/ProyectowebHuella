@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-noticias',
+  selector: 'app-estadisticas',
   imports: [CommonModule],
-  templateUrl: './noticias.html',
-  styleUrl: './noticias.css'
+  templateUrl: './estadisticas.html',
+  styleUrl: './estadisticas.css'
 })
-export class NoticiasComponent {
+export class Estadisticas {
 
 }
