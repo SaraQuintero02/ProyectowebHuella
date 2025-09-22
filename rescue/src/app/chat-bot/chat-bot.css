@@ -1,0 +1,234 @@
+/* Contenedor principal */
+.chatbot-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Botón flotante del chatbot */
+.chatbot-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 15px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.chatbot-float:hover {
+  transform: scale(1.1);
+}
+
+/* Popup del chatbot */
+.chatbot-popup {
+  position: fixed;
+  bottom: 85px;
+  right: 60px;
+  width: 350px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 1rem;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.chatbot-popup.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header del popup */
+.popup-header {
+  background: #000000;
+  color: #ffffff;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-header span {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.popup-header span:hover {
+  color: #ccc;
+}
+
+/* Cuerpo del popup */
+.popup-body {
+  padding: 12px;
+  text-align: left;
+}
+
+.popup-body p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0 0 14px 0;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones del popup */
+.popup-btn {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  background: #000000;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+}
+
+.popup-btn:hover {
+  background: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Botón de scroll hacia arriba */
+.scroll-to-top {
+  position: fixed;
+  bottom: 70px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+  background: #333;
+}
+
+/* Responsive Design */
+
+/* Móviles (768px y menos) */
+@media (max-width: 768px) {
+  .chatbot-popup {
+    width: 280px;
+    bottom: 60px;
+    right: 15px;
+  }
+
+  .popup-body p {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .popup-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .chatbot-float {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .scroll-to-top {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    bottom: 55px;
+    right: 15px;
+  }
+}
+
+/* Tablets (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .chatbot-popup {
+    width: 320px;
+    bottom: 70px;
+    right: 20px;
+  }
+
+  .popup-body p {
+    font-size: 1rem;
+    padding: 9px 13px;
+  }
+
+  .popup-btn {
+    padding: 9px;
+    font-size: 0.95rem;
+  }
+
+  .chatbot-float {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .scroll-to-top {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    bottom: 65px;
+    right: 20px;
+  }
+}
+
+/* Escritorio grande */
+@media (min-width: 1025px) {
+  .chatbot-popup {
+    width: 370px;
+  }
+  
+  .popup-body p {
+    font-size: 1.1rem;
+  }
+}
