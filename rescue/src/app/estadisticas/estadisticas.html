@@ -1,1 +1,33 @@
-<p>estadisticas works!</p>
+<main>
+  <h1>Esterilización por Municipios de Colombia</h1>
+
+  <table id="tablaNoticias">
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Fecha</th>
+        <th>Municipio</th>
+        <th>Caninos Hembras</th>
+        <th>Caninos Machos</th>
+        <th>Felinos Machos</th>
+        <th>Felinos Hembras</th>
+        <th>Total Animales</th>
+        <th>Decesos</th>
+      </tr>
+    </thead>
+    <!--Recorre todos los datos que llegan de la API-->
+    <tbody>
+      <tr *ngFor="let item of estadisticas"> <!--Repite un bloque de html por cada elemento-->
+        <td>{{ item.a_o || 'N/A' }}</td>
+        <td>{{ item.fecha_de_realizacion || 'N/A' }}</td>
+        <td>{{ item.municipio || 'N/A' }}</td>
+        <td>{{ item.caninos_hembras || 0 }}</td>
+        <td>{{ item.caninos_machos || 0 }}</td>
+        <td>{{ item.felinos_machos || 0 }}</td>
+        <td>{{ item.felinos_hembras || 0 }}</td>
+        <td>{{ item.total_n_de_animales || 0 }}</td>
+        <td>{{ item.decesos || 0 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
