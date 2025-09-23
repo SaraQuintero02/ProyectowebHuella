@@ -36,3 +36,21 @@
   height: 18px;
   object-fit: contain;
 }
+
+/*WEB RESPONSIVA PARA CELULARES 768PX*/
+@media (max-width: 768px) {
+  .botones-accesibilidad button {
+    width: 27px;
+    height: 27px;
+    font-size: 8px;
+  }
+}
+
+/*WEB RESPONSIVA PARA PANATALLAS ENTRE 769px y 1024px*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .botones-accesibilidad button {
+    width: 30px;
+    height: 30px;
+    font-size: 9px;
+  }
+}
