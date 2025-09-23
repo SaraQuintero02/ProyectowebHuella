@@ -10,26 +10,41 @@ import { CommonModule } from '@angular/common';
 })
 export class Header {
   openMenu: string | null = null; //Guarda submenu ue esta abierto
+  mobileMenuOpen = false; // Control del menú móvil
 
-  //1. Metodo para abrir y cerrar menu
-  toggleMenu(event: Event, menu: string): void {
-    event.preventDefault(); //Afectara submenus
-    event.stopPropagation(); //Para que no burbuje
-    this.openMenu = this.openMenu === menu ? null : menu; //Si el menu ya estaba abierto lo cierra
-  }
-
-  //2. Cerrar el menu al hacer click fuera
-  @HostListener('document:click', ['$event'])
-  onClickOutside(event: Event) {
-    const target = event.target as HTMLElement;
-    if (!target.closest('nav')) { //Si no esta dentro del nav lo cierra
-      this.openMenu = null;
+  // 1. Método abrir/cerrar submenu
+  abrirCerrarMenu(menu: string): void {
+    if (this.openMenu === menu) {
+      this.openMenu = null; // Si es el mismo submenu, lo cierra
+    } else {
+      this.openMenu = menu; // Abre el submenu actual
     }
   }
 
-  //3. Cerrar menu al presionar esc
+  // 2. Método cerrar todos los submenus
+  cierraMenus(): void {
+    this.openMenu = null; // Con Angular basta con limpiar la variable
+  }
+
+  // 3. Cerrar menu al hacer click fuera
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('nav')) {
+      this.cierraMenus();
+      this.mobileMenuOpen = false;
+    }
+  }
+
+  // 4. Cerrar menu al presionar ESC
   @HostListener('document:keydown.esc')
   onEscKey() {
-    this.openMenu = null;
+    this.cierraMenus();
+    this.mobileMenuOpen = false;
+  }
+
+  // 5. Abrir/cerrar menú en móvil
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 }

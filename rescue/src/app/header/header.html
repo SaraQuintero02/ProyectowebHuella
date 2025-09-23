@@ -1,31 +1,35 @@
 <header id="header">
   <nav>
     <h1><i class="fa-solid fa-paw"></i> HUELLAS SOLIDARIAS</h1>
-    <ul>
+
+    <!-- Icono del menú hamburguesa SOLO en móvil -->
+    <button class="menu-toggle" (click)="toggleMobileMenu()" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul [class.open]="mobileMenuOpen">
       <li><a routerLink="/inicio">Inicio</a></li>
 
       <!--Item Nosotros-->
       <li class="submenu" [class.open]="openMenu === 'nosotros'">
-        <a href="#" (click)="toggleMenu($event, 'nosotros')"
-          >Nosotros <i class="fa-solid fa-caret-down"></i
-        ></a>
-        <ul class="submenu-items">
-          <li><a routerLink="/mision-vision" routerLinkActive="active">Misión y Visión</a></li>
-          <li><a routerLink="/voluntarios"routerLinkActive="active">Voluntariados</a></li>
-          <li><a routerLink="/estadisticas"routerLinkActive="active">Estadísticas</a></li>
-        </ul>
-      </li>
+        <a href="#" (click)="abrirCerrarMenu('nosotros'); $event.preventDefault()">
+          Nosotros <i class="fa-solid fa-caret-down"></i>
+        </a>
+      <ul class="submenu-items">
+        <li><a routerLink="/mision-vision" routerLinkActive="active">Misión y Visión</a></li>
+        <li><a routerLink="/voluntarios" routerLinkActive="active">Voluntariados</a></li>
+        <li><a routerLink="/estadisticas" routerLinkActive="active">Estadísticas</a></li>
+      </ul>
+    </li>
 
-      <!--Item Adopciones-->
-      <li class="submenu" [class.open]="openMenu === 'adopciones'">
-        <a href="#" (click)="toggleMenu($event, 'adopciones')"
-          >Adopciones <i class="fa-solid fa-caret-down"></i
-        ></a>
-        <ul class="submenu-items">
-          <li><a routerLink="/proceso-adopcion" routerLinkActive="active">Proceso de Adopción</a></li>
-          <li><a routerLink="/adoptables" routerLinkActive="active">Adoptables</a></li>
-        </ul>
-      </li>
+    <li class="submenu" [class.open]="openMenu === 'adopciones'">
+      <a href="#" (click)="abrirCerrarMenu('adopciones'); $event.preventDefault()">
+        Adopciones <i class="fa-solid fa-caret-down"></i>
+      </a>
+    <ul class="submenu-items">
+      <li><a routerLink="/proceso-adopcion" routerLinkActive="active">Proceso de Adopción</a></li>
+      <li><a routerLink="/adoptables" routerLinkActive="active">Adoptables</a></li>
+    </ul>
+    </li>
 
       <!--Item Contacto-->
       <li><a routerLink="/contacto"routerLinkActive="active">Contáctanos</a></li>
